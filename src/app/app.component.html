@@ -1,10 +1,16 @@
+<app-nav></app-nav>
+
 <main class="bg-slate-200 min-h-svh flex justify-center items-center">
-    <router-outlet></router-outlet>
+  <router-outlet></router-outlet>
 
-    <app-card [message]=" '1234' ">    </app-card>
-    <app-card [message]=" title ">   </app-card>
+  <!-- <app-card [message]=" '1234' ">    </app-card> -->
+  @if(showMessage) {
+  <app-card [message]="message"> </app-card>
+  }
 
-    <!-- TODO LIST -->
-    <!-- Configure routing -->
-    <!-- Do github things -->
+  <!-- TODO: Find out why this emits twice ??? -->
+  <app-button (click)="handle()" (mouseover)="spy()">hello</app-button>
+  <!-- TODO LIST -->
+  <!-- Configure routing -->
+  <!-- Do github things -->
 </main>

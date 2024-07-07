@@ -1,0 +1,16 @@
+<h1>Word of the day</h1>
+
+<div class="big">
+  {{ word }}
+</div>
+
+<button class="border-lime-800 rounded-md p-2 md:p-4 border-2 transition-all" (click)="newWord()">
+  Give Me A New Word
+</button>
+
+<label>
+  Type the given word:
+  <input type="text" [(ngModel)]="typing" (keydown)="checkWord()" />
+</label>
+
+{{ correct }}
