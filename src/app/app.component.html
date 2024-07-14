@@ -1,16 +1,7 @@
-<app-nav></app-nav>
+<div class="bg-slate-200 min-h-svh">
+  <app-nav></app-nav>
 
-<main class="bg-slate-200 min-h-svh flex justify-center items-center">
-  <router-outlet></router-outlet>
-
-  <!-- <app-card [message]=" '1234' ">    </app-card> -->
-  @if(showMessage) {
-  <app-card [message]="message"> </app-card>
-  }
-
-  <!-- TODO: Find out why this emits twice ??? -->
-  <app-button (click)="handle()" (mouseover)="spy()">hello</app-button>
-  <!-- TODO LIST -->
-  <!-- Configure routing -->
-  <!-- Do github things -->
-</main>
+  <main class="flex justify-center py-20">
+    <router-outlet></router-outlet>
+  </main>
+</div>
