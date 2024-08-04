@@ -1,0 +1,8 @@
+<app-gallery [images]="images()"></app-gallery>
+
+<hr />
+<label for="src">New Image</label>
+<input id="src" type="text" [(ngModel)]="value" />
+<button (click)="addImage()">Add</button>
+
+<app-gallery [images]="secondSection()"></app-gallery>

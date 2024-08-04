@@ -1,0 +1,9 @@
+<div class="flex gap-1">
+  @for (col of allCols(); track $index) {
+  <div class="flex gap-1 flex-col w-1/2">
+    @for (item of col; track $index) {
+    <img [src]="item" alt="" />
+    }
+  </div>
+  }
+</div>

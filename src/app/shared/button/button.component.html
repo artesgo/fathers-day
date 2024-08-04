@@ -2,8 +2,11 @@
   (click)="click.emit()"
   (mouseover)="mouseover.emit()"
   (mouseout)="mouseout.emit()"
-  class="btn btn-primary border-orange-700 p-4"
+  class="btn btn-primary border-orange-700 border border-dashed p-4"
 >
+  <!-- NOTE: border is the width of the border -->
+  <!-- border-dashed is the style of the border -->
+  <!-- border-orange-... is the color of the border -->
   <ng-content></ng-content>
   <!-- <slot /> -->
 </button>
