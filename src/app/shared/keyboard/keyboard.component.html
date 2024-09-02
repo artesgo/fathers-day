@@ -1,9 +1,7 @@
-<div class="particle-container">
-  <ngx-particles
-    [id]="id()"
-    [options]="particlesOptions()"
-    (particlesLoaded)="particlesLoaded($event)"
-  ></ngx-particles>
+<div class="opacity-20">
+  <ngx-particles [id]="id()" [options]="particlesOptions()" (particlesLoaded)="particlesLoaded($event)"></ngx-particles>
+</div>
+<div class="particle-container z-[500] relative">
   <div>
     <app-key
       [activated]="keys().includes('Tab')"

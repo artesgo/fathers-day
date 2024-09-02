@@ -20,6 +20,7 @@
     "@nx/angular": "19.6.0",
     "@tsparticles/angular": "^3.0.0",
     "@tsparticles/engine": "^3.5.0",
+    "@tsparticles/slim": "^3.5.0",
     "random-words": "^2.0.1",
     "rxjs": "~7.8.0",
     "tslib": "^2.3.0",
