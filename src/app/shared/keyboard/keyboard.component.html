@@ -1,0 +1,109 @@
+<div class="particle-container">
+  <ngx-particles
+    [id]="id()"
+    [options]="particlesOptions()"
+    (particlesLoaded)="particlesLoaded($event)"
+  ></ngx-particles>
+  <div>
+    <app-key
+      [activated]="keys().includes('Tab')"
+      [width]="66"
+    >
+      Tab
+    </app-key>
+    <app-key [activated]="keys().includes('q')">q</app-key>
+    <app-key [activated]="keys().includes('w')">w</app-key>
+    <app-key [activated]="keys().includes('e')">e</app-key>
+    <app-key [activated]="keys().includes('r')">r</app-key>
+    <app-key [activated]="keys().includes('t')">t</app-key>
+    <app-key [activated]="keys().includes('y')">y</app-key>
+    <app-key [activated]="keys().includes('u')">u</app-key>
+    <app-key [activated]="keys().includes('i')">i</app-key>
+    <app-key [activated]="keys().includes('o')">o</app-key>
+    <app-key [activated]="keys().includes('p')">p</app-key>
+    <app-key [activated]="keys().includes('\[')">[</app-key>
+    <app-key [activated]="keys().includes('\]')">]</app-key>
+    <app-key [activated]="keys().includes('\\')">\</app-key>
+  </div>
+  <div>
+    <app-key
+      [activated]="keys().includes('CapsLock')"
+      [width]="76"
+    >
+      capslock
+    </app-key>
+    <app-key [activated]="keys().includes('a')">a</app-key>
+    <app-key [activated]="keys().includes('s')">s</app-key>
+    <app-key [activated]="keys().includes('d')">d</app-key>
+    <app-key [activated]="keys().includes('f')">f</app-key>
+    <app-key [activated]="keys().includes('g')">g</app-key>
+    <app-key [activated]="keys().includes('h')">h</app-key>
+    <app-key [activated]="keys().includes('j')">j</app-key>
+    <app-key [activated]="keys().includes('k')">k</app-key>
+    <app-key [activated]="keys().includes('l')">l</app-key>
+    <app-key [activated]="keys().includes(';')">;</app-key>
+    <app-key [activated]="keys().includes('\'')">'</app-key>
+    <app-key
+      [activated]="keys().includes('Enter')"
+      [width]="86"
+      >Enter</app-key
+    >
+  </div>
+  <div>
+    <app-key
+      [activated]="keys().includes('Shift')"
+      [width]="86"
+    >
+      Shift
+    </app-key>
+    <app-key [activated]="keys().includes('z')">z</app-key>
+    <app-key [activated]="keys().includes('x')">x</app-key>
+    <app-key [activated]="keys().includes('c')">c</app-key>
+    <app-key [activated]="keys().includes('v')">v</app-key>
+    <app-key [activated]="keys().includes('b')">b</app-key>
+    <app-key [activated]="keys().includes('n')">n</app-key>
+    <app-key [activated]="keys().includes('m')">m</app-key>
+    <app-key [activated]="keys().includes('\,')">,</app-key>
+    <app-key [activated]="keys().includes('\.')">.</app-key>
+    <app-key [activated]="keys().includes('\/')">/</app-key>
+    <app-key
+      [activated]="keys().includes('Shift')"
+      [width]="86"
+    >
+      Shift
+    </app-key>
+  </div>
+  <div>
+    <app-key
+      [activated]="keys().includes('Control')"
+      [width]="66"
+    >
+      Control
+    </app-key>
+    <app-key
+      [activated]="keys().includes('Alt')"
+      [width]="66"
+      >Alt</app-key
+    >
+    <app-key
+      [activated]="keys().includes('Meta')"
+      [width]="66"
+      >Meta</app-key
+    >
+    <app-key
+      [activated]="keys().includes(' ')"
+      [width]="160"
+      >Spacebar</app-key
+    >
+    <app-key
+      [activated]="keys().includes('Meta')"
+      [width]="66"
+      >Meta</app-key
+    >
+    <app-key
+      [activated]="keys().includes('Alt')"
+      [width]="66"
+      >Alt</app-key
+    >
+  </div>
+</div>

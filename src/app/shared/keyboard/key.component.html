@@ -1,0 +1,8 @@
+<button
+  class="btn h-8 border rounded-sm border-solid m-1"
+  [attr.style]="'width: ' + width() + 'px'"
+  [class.btn-primary]="activated()"
+  [class.btn-accent]="!activated()"
+>
+  <ng-content></ng-content>
+</button>
