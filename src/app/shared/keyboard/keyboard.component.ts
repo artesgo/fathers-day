@@ -6,15 +6,13 @@ import {
   signal,
 } from '@angular/core';
 import { KeyComponent } from './key.component';
-import { IParticlesProps, NgParticlesService, NgxParticlesModule } from '@tsparticles/angular';
 import {
-  HoverEvent,
-  MoveDirection,
-  // ClickMode,
-  // HoverMode,
-  OutMode,
-} from '@tsparticles/engine';
-import { loadSlim } from '@tsparticles/slim';
+  IParticlesProps,
+  NgParticlesService,
+  NgxParticlesModule,
+} from '@tsparticles/angular';
+import { MoveDirection, OutMode } from '@tsparticles/engine';
+import { loadFull } from 'tsparticles';
 
 @Component({
   selector: 'app-keyboard',
@@ -33,12 +31,10 @@ export class KeyboardComponent implements OnInit {
         onClick: {
           enable: true,
           mode: 'push',
-          // mode: ClickMode.push,
         },
         onHover: {
           enable: true,
           mode: 'repulse',
-          // mode: HoverMode.repulse,
         },
         resize: {
           enable: true,
@@ -63,7 +59,7 @@ export class KeyboardComponent implements OnInit {
         color: '#333',
         distance: 200,
         enable: true,
-        opacity: 0.5,
+        opacity: 0.3,
         width: 1,
       },
       move: {
@@ -92,6 +88,50 @@ export class KeyboardComponent implements OnInit {
         value: { min: 1, max: 5 },
       },
     },
+    emitters: {
+      autoPlay: true,
+      fill: true,
+      position: { x: -5, y: 55 },
+      life: { wait: false },
+      rate: { delay: 7.15, quantity: 1 },
+      shape: {
+        type: 'square',
+        options: {},
+        replace: {
+          color: false,
+          opacity: false,
+        },
+      },
+      startCount: 0,
+      size: {
+        mode: 'percent',
+        height: 0, width: 0,
+      },
+      particles: {
+        shape: {
+          type: 'images',
+          options: {
+            images: {
+              src: 'https://particles.js.org/images/cyan_amongus.png',
+              width: 500,
+              height: 634,
+            },
+          },
+        },
+        size: { value: 40 },
+        move: {
+          direction: MoveDirection.right,
+          speed: 10,
+          straight: true,
+          outModes: { right: OutMode.destroy },
+        },
+        zIndex: { value: 5 },
+        rotate: {
+          value: { min: 0, max: 760 },
+          animation: { enable: true, speed: 10, sync: true },
+        },
+      },
+    },
     detectRetina: true,
   });
   constructor(
@@ -103,8 +143,7 @@ export class KeyboardComponent implements OnInit {
       // Starting from 1.19.0 you can add custom presets or shape here, using the current tsParticles instance (main)
       // this loads the tsparticles package bundle, it's the easiest method for getting everything ready
       // starting from v2 you can add only the features you need reducing the bundle size
-      //await loadFull(engine);
-      await loadSlim(engine);
+      await loadFull(engine);
     });
   }
 
