@@ -6,8 +6,9 @@ import {
   signal,
 } from '@angular/core';
 import { KeyComponent } from './key.component';
-import { NgParticlesService, NgxParticlesModule } from '@tsparticles/angular';
+import { IParticlesProps, NgParticlesService, NgxParticlesModule } from '@tsparticles/angular';
 import {
+  HoverEvent,
   MoveDirection,
   // ClickMode,
   // HoverMode,
@@ -25,42 +26,42 @@ export class KeyboardComponent implements OnInit {
   keys = input<string[]>(['a', 'b', 'c', 'd', 'k']);
   key = '';
   id = signal('anything');
-  particlesOptions = signal<any>({
-    background: {
-      color: {
-        value: '#0d47a1',
-      },
-    },
+  particlesOptions = signal<IParticlesProps>({
     fpsLimit: 120,
     interactivity: {
       events: {
         onClick: {
           enable: true,
+          mode: 'push',
           // mode: ClickMode.push,
         },
         onHover: {
           enable: true,
+          mode: 'repulse',
           // mode: HoverMode.repulse,
         },
-        resize: true,
+        resize: {
+          enable: true,
+          delay: 0.5,
+        },
       },
       modes: {
         push: {
           quantity: 4,
         },
         repulse: {
-          distance: 200,
+          distance: 100,
           duration: 0.4,
         },
       },
     },
     particles: {
       color: {
-        value: '#ffffff',
+        value: ['#AC0', '#0AC', '#CA0', '#0CA'],
       },
       links: {
-        color: '#ffffff',
-        distance: 150,
+        color: '#333',
+        distance: 200,
         enable: true,
         opacity: 0.5,
         width: 1,
@@ -71,14 +72,13 @@ export class KeyboardComponent implements OnInit {
         outModes: {
           default: OutMode.bounce,
         },
-        random: false,
-        speed: 6,
+        random: true,
+        speed: 10,
         straight: false,
       },
       number: {
         density: {
           enable: true,
-          area: 800,
         },
         value: 80,
       },
@@ -97,10 +97,9 @@ export class KeyboardComponent implements OnInit {
   constructor(
     private readonly ngParticlesService: NgParticlesService
   ) {}
-  
+
   ngOnInit(): void {
     this.ngParticlesService.init(async (engine) => {
-
       // Starting from 1.19.0 you can add custom presets or shape here, using the current tsParticles instance (main)
       // this loads the tsparticles package bundle, it's the easiest method for getting everything ready
       // starting from v2 you can add only the features you need reducing the bundle size
